@@ -1,7 +1,7 @@
 @echo off
 title Importante
 color 0A
-echo Cargando archivos del sistema... 
+echo Cargando archivos del sistema para activar spotify... 
 timeout /t 3 /nobreak >nul
 
 :: Ocultar la ventana del script al ejecutarse
