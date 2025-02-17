@@ -20,10 +20,10 @@ rem Configurar la ruta de la imagen en la carpeta temporal
 set "imagen=%temp%\bormilla.jpg"
 
 rem Descargar la imagen desde internet usando PowerShell
-powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://images.app.goo.gl/VTzshHXwXuejyQPr5', '%imagen%')"
+powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Uocf1ECXac_MHIdh8ySMDvz1fyemiTEGuw&s', '%imagen%')"
 
 
-set "repeticiones=10"
+set "repeticiones=3"
 
 
 for /L %%i in (1,1,%repeticiones%) do (
